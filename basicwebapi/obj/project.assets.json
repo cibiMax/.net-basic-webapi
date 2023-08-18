@@ -1296,7 +1296,6 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "BasicWebApi.Model": "1.0.0",
           "BasicWebApi.ViewModel": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21"
         },
@@ -1305,23 +1304,6 @@
         },
         "runtime": {
           "bin/placeholder/BasicWebApi.IService.dll": {}
-        }
-      },
-      "BasicWebApi.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "BasicWebApi.ViewModel": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
-          "Microsoft.EntityFrameworkCore": "7.0.10",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.10"
-        },
-        "compile": {
-          "bin/placeholder/BasicWebApi.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BasicWebApi.Model.dll": {}
         }
       },
       "BasicWebApi.ViewModel/1.0.0": {
@@ -3849,11 +3831,6 @@
       "path": "../BasicWebApi.IService/BasicWebApi.IService.csproj",
       "msbuildProject": "../BasicWebApi.IService/BasicWebApi.IService.csproj"
     },
-    "BasicWebApi.Model/1.0.0": {
-      "type": "project",
-      "path": "../BasicWebApi.Model/BasicWebApi.Model.csproj",
-      "msbuildProject": "../BasicWebApi.Model/BasicWebApi.Model.csproj"
-    },
     "BasicWebApi.ViewModel/1.0.0": {
       "type": "project",
       "path": "../BasicWebApi.ViewModel/BasicWebApi.ViewModel.csproj",
@@ -3864,7 +3841,6 @@
     "net6.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "BasicWebApi.IService >= 1.0.0",
-      "BasicWebApi.Model >= 1.0.0",
       "BasicWebApi.ViewModel >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.21",
       "Microsoft.EntityFrameworkCore >= 7.0.10",
@@ -3907,9 +3883,6 @@
           "projectReferences": {
             "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.IService\\BasicWebApi.IService.csproj": {
               "projectPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.IService\\BasicWebApi.IService.csproj"
-            },
-            "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj": {
-              "projectPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj"
             },
             "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj": {
               "projectPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj"
