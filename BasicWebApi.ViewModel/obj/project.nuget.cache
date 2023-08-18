@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "KytHzOhLJooMAEEZdORonlprP3eF5O7SG79KooG5Pv/gpzP204CTxPc94pBe6tJE2WQFDM0lHwXtnbMH6eiXng==",
+  "dgSpecHash": "lXebSe702DHhQezkkLZwMr6oj5gUTumVf/MXy/R+fS9XbufJpq3MnPdmiRTPFgBUcvdDnXblqOv8/UEJ3/JAOQ==",
   "success": true,
   "projectFilePath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.0\\microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
