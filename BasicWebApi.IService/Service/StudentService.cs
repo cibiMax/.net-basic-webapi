@@ -1,6 +1,7 @@
-﻿using BasicWebApi.IService.IService;
+﻿using AutoMapper;
+using BasicWebApi.IService.IService;
 using BasicWebApi.Model.Models;
-using BasicWEbApi.Models.Models;
+using BasicWebApi.ViewModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,11 @@ namespace BasicWebApi.IService.Service
     public class StudentService : IStudentService
     {
         private readonly ApplicationDbContext _applicationDbContext;
-        public StudentService(ApplicationDbContext application)
+        private readonly IMapper _mapper;
+        public StudentService(ApplicationDbContext application,IMapper mapper)
         {
             _applicationDbContext = application;
+            _mapper = mapper;
         }
 
         public void DeleteStudent(int id)
@@ -26,27 +29,27 @@ namespace BasicWebApi.IService.Service
 
         }
 
-        public Student GetStudentById(int id)
+        public StudentVm GetStudentById(int id)
         {
-        return   _applicationDbContext.students.FirstOrDefault(a=>a.Id==id);
+        return  _mapper.Map<Student,StudentVm>( _applicationDbContext.students.FirstOrDefault(a=>a.Id==id));
         }
 
-        public List<Student> GetStudents()
+        public List<StudentVm> GetStudents()
         {
-            List<Student> students = new List<Student>();
-            students = _applicationDbContext.students.ToList<Student>();
+            List<StudentVm> students = _mapper.Map<List<Student>, List<StudentVm>>(_applicationDbContext.students.ToList());
             return students;
         }
 
-        public int InsertStudent(Student student)
+     async   public Task<int> InsertStudent(StudentVm student)
         {
-            _applicationDbContext.students.Add(student);
+        Student s=    _mapper.Map<StudentVm, Student>(student);
+        await  _applicationDbContext.students.AddAsync(s);
             return _applicationDbContext.SaveChanges();
         }
 
-        public void UpdateStudent(Student student)
+        public void UpdateStudent(StudentVm student)
         {
-            _applicationDbContext.students.Update(student);
+            _applicationDbContext.students.Update(   _mapper.Map<StudentVm, Student>(student));
             _applicationDbContext.SaveChanges();
             return;
         }

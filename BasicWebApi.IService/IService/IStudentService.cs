@@ -1,4 +1,4 @@
-﻿using BasicWEbApi.Models.Models;
+﻿using BasicWebApi.ViewModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +9,12 @@ namespace BasicWebApi.IService.IService
 {
     public interface IStudentService
     {
-        public int InsertStudent(Student student);
+        public Task<int>InsertStudent(StudentVm student);
 
-        public List<Student> GetStudents();
+        public List<StudentVm> GetStudents();
 
-        public Student GetStudentById(int id);
-        public void UpdateStudent(Student student);
+        public StudentVm GetStudentById(int id);
+        public void UpdateStudent(StudentVm student);
 
         public void DeleteStudent(int id);
 

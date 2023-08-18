@@ -5,9 +5,11 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "basicwebapi", "basicwebapi.csproj", "{FF9F77ED-0A9A-4245-9E60-DD53CCE47EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicWebApi.IService", "..\BasicWebApi.IService\BasicWebApi.IService.csproj", "{92C9DE35-423B-4779-89E6-1062622E7A25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicWebApi.IService", "..\BasicWebApi.IService\BasicWebApi.IService.csproj", "{92C9DE35-423B-4779-89E6-1062622E7A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicWebApi.Model", "..\BasicWebApi.Model\BasicWebApi.Model.csproj", "{8A14C4CF-2A9A-4A4F-B0F2-82F02A9AFC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicWebApi.Model", "..\BasicWebApi.Model\BasicWebApi.Model.csproj", "{8A14C4CF-2A9A-4A4F-B0F2-82F02A9AFC32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicWebApi.ViewModel", "..\BasicWebApi.ViewModel\BasicWebApi.ViewModel.csproj", "{BDDF1A6E-2455-45F5-B9ED-88E69B94AD34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8A14C4CF-2A9A-4A4F-B0F2-82F02A9AFC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A14C4CF-2A9A-4A4F-B0F2-82F02A9AFC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A14C4CF-2A9A-4A4F-B0F2-82F02A9AFC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDF1A6E-2455-45F5-B9ED-88E69B94AD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDF1A6E-2455-45F5-B9ED-88E69B94AD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDF1A6E-2455-45F5-B9ED-88E69B94AD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDF1A6E-2455-45F5-B9ED-88E69B94AD34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

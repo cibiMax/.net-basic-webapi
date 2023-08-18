@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xhqIwBB44fTiwr8m3MpOF3NFqwUDNsoS2GdxFBHoFRYy9j/VevZ/mAkgo1N409U0mVaBVKbskSbVu5PaMLoT+w==",
+  "dgSpecHash": "14vZNwBcMjwsJoy42wswIQbf0zSwBefshyc+M+UkIfWUGQF0/pxcorgsSbXNrKLCs/DkzvQ7uxQEYYuBYsQ7gQ==",
   "success": true,
   "projectFilePath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.IService\\BasicWebApi.IService.csproj",
   "expectedPackageFiles": [
@@ -10,8 +10,10 @@
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.10\\microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.10\\microsoft.entityframeworkcore.analyzers.7.0.10.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.10\\microsoft.entityframeworkcore.relational.7.0.10.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",

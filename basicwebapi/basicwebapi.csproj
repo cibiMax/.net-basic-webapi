@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BasicWebApi.IService\BasicWebApi.IService.csproj" />
     <ProjectReference Include="..\BasicWebApi.Model\BasicWebApi.Model.csproj" />
+    <ProjectReference Include="..\BasicWebApi.ViewModel\BasicWebApi.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

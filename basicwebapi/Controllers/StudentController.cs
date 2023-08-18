@@ -2,8 +2,7 @@
 using System.Runtime.InteropServices;
 using BasicWebApi.IService.IService;
 using BasicWebApi.IService.Service;
-
-using BasicWEbApi.Models.Models;
+using BasicWebApi.ViewModel.ViewModels;
 
 namespace basicwebapi.Controllers
 {
@@ -18,9 +17,9 @@ namespace basicwebapi.Controllers
         }
         [HttpPost]
         [Route("Create")]
-        public IActionResult InsertStudent([FromBody]Student student)
+      async  public Task<IActionResult>InsertStudent([FromBody]StudentVm student)
         {
-            int rval= _studentService.InsertStudent(student);
+            await _studentService.InsertStudent(student);
            
                 return  Ok(student);
             
@@ -30,7 +29,7 @@ namespace basicwebapi.Controllers
         [Route("GetAll")]
         public IActionResult GetStudents()
         {
-            List<Student> students=_studentService.GetStudents();
+            List<StudentVm> students=_studentService.GetStudents();
            
             return Ok(students);
         }
@@ -38,13 +37,13 @@ namespace basicwebapi.Controllers
         [Route("GetById")]
         public IActionResult GetStudentById(int id)
         {
-            Student students = _studentService.GetStudentById(id);
+            StudentVm students = _studentService.GetStudentById(id);
 
             return Ok(students);
         }
         [HttpPut]
         [Route("UpdateStudent")]
-        public IActionResult UpdateStudent([FromBody]Student student) {
+        public IActionResult UpdateStudent([FromBody] StudentVm student) {
             _studentService.UpdateStudent(student);
             return Ok();
         }

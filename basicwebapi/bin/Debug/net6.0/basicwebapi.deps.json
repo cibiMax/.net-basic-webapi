@@ -11,6 +11,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "BasicWebApi.IService": "1.0.0",
           "BasicWebApi.Model": "1.0.0",
+          "BasicWebApi.ViewModel": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.EntityFrameworkCore.Design": "7.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
@@ -777,7 +778,8 @@
       "BasicWebApi.IService/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "BasicWebApi.Model": "1.0.0"
+          "BasicWebApi.Model": "1.0.0",
+          "BasicWebApi.ViewModel": "1.0.0"
         },
         "runtime": {
           "BasicWebApi.IService.dll": {}
@@ -786,10 +788,17 @@
       "BasicWebApi.Model/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "Microsoft.EntityFrameworkCore": "7.0.10"
+          "BasicWebApi.ViewModel": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.10",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.10"
         },
         "runtime": {
           "BasicWebApi.Model.dll": {}
+        }
+      },
+      "BasicWebApi.ViewModel/1.0.0": {
+        "runtime": {
+          "BasicWebApi.ViewModel.dll": {}
         }
       }
     }
@@ -1338,6 +1347,11 @@
       "sha512": ""
     },
     "BasicWebApi.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BasicWebApi.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

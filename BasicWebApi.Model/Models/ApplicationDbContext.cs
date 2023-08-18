@@ -1,6 +1,6 @@
 ﻿
 
-using BasicWEbApi.Models.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace BasicWebApi.Model.Models
