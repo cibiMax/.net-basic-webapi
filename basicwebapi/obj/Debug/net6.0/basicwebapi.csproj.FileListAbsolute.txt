@@ -187,3 +187,8 @@ D:\vs projects\.net-basic-webapi\basicwebapi\obj\Debug\net6.0\refint\basicwebapi
 D:\vs projects\.net-basic-webapi\basicwebapi\obj\Debug\net6.0\basicwebapi.pdb
 D:\vs projects\.net-basic-webapi\basicwebapi\obj\Debug\net6.0\basicwebapi.genruntimeconfig.cache
 D:\vs projects\.net-basic-webapi\basicwebapi\obj\Debug\net6.0\ref\basicwebapi.dll
+D:\vs projects\.net-basic-webapi\basicwebapi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\vs projects\.net-basic-webapi\basicwebapi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\vs projects\.net-basic-webapi\basicwebapi\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\vs projects\.net-basic-webapi\basicwebapi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\vs projects\.net-basic-webapi\basicwebapi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
