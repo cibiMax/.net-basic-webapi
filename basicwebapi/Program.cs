@@ -1,8 +1,7 @@
+using basicwebapi.Models;
 using BasicWebApi.IService.IService;
 using BasicWebApi.IService.Service;
-using BasicWebApi.Model.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

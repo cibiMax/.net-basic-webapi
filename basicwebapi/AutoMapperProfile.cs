@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using BasicWebApi.Model.Models;
+using basicwebapi.Models;
+
 using BasicWebApi.ViewModel.ViewModels;
 
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using basicwebapi.Models;
 using BasicWebApi.IService.IService;
-using BasicWebApi.Model.Models;
+
 using BasicWebApi.ViewModel.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace BasicWebApi.IService.Service
 {
     public class StudentService : IStudentService
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly  ApplicationDbContext _applicationDbContext;
         private readonly IMapper _mapper;
         public StudentService(ApplicationDbContext application,IMapper mapper)
         {

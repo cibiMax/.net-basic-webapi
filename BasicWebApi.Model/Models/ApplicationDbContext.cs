@@ -1,9 +1,10 @@
 ﻿
 
 
+using basicwebapi;
 using Microsoft.EntityFrameworkCore;
 
-namespace BasicWebApi.Model.Models
+namespace basicwebapi.Models
 {
     public class ApplicationDbContext : DbContext
     {

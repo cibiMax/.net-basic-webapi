@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicWebApi.Model.Models
+namespace basicwebapi.Models
 {
     public class Student
     {
