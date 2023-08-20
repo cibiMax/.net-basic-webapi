@@ -36,7 +36,7 @@ namespace BasicWebApi.IService.Service
                 return null;
             }
 
-       
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
@@ -44,15 +44,17 @@ namespace BasicWebApi.IService.Service
                 new Claim(ClaimTypes.NameIdentifier,user.Email),
                 new Claim(ClaimTypes.Role,user.Password)
             };
-          var   token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
-                 _configuration["Jwt:Audience"],
-                 claims,
+            var audience = _configuration["Jwt:Audience"];
+            var issuer = _configuration["Jwt:Issuer"];
+            var token = new JwtSecurityToken(
+                issuer,
+                audience,
+                claims,
+                expires: DateTime.UtcNow.AddHours(10),
+                   signingCredentials: credentials);
 
-                 expires: DateTime.UtcNow.AddHours(10),
-                 signingCredentials: credentials);
 
-
-          var  tokenToRet =new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenToRet = new JwtSecurityTokenHandler().WriteToken(token);
 
             return tokenToRet;
 

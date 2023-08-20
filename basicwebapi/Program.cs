@@ -49,7 +49,9 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
-
+var secret = builder.Configuration["Jwt:key"];
+var issuer = builder.Configuration["Jwt:Issuer"];
+var audience= builder.Configuration["Jwt:Audience"];
 builder.Services.AddAuthentication(op =>
 {
     op.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -61,15 +63,16 @@ builder.Services.AddAuthentication(op =>
     op.SaveToken = true;
     op.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
     {
+     
         ValidateIssuer = false,
         ValidateAudience = false,
-        ValidateLifetime = true,
+        ValidateLifetime = false,
         ValidateIssuerSigningKey = true,
         ValidateActor = false,
         RequireExpirationTime = true,
-        ValidAudience = builder.Configuration["Jwt:Audince"],
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"])),
+        ValidAudience = audience,
+        ValidIssuer = issuer,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
       
     };
 });
@@ -84,9 +87,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseCors(o => o.WithOrigins("*").AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.MapControllers();
 
