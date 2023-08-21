@@ -1,8 +1,12 @@
-﻿using basicwebapi.Models;
+﻿using AutoMapper;
+using basicwebapi.constants;
+using basicwebapi.Models;
 using BasicWebApi.IService.IService;
+using BasicWebApi.Model.Models;
 using BasicWebApi.ViewModel.ViewModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -18,45 +22,74 @@ namespace BasicWebApi.IService.Service
     public class AuthService : IAuthService
     {
         private readonly ApplicationDbContext _applicationDbContext;
-        private readonly IConfiguration _configuration;
-        public AuthService(ApplicationDbContext applicationDbContext, IConfiguration configuration)
+        private readonly IMapper _mapper;
+        private readonly ITokenService _tokenService;
+        public AuthService(ApplicationDbContext applicationDbContext, ITokenService tokenService, IMapper mapper)
         {
             _applicationDbContext = applicationDbContext;
-            _configuration = configuration;
+            _tokenService = tokenService;
+            _mapper = mapper;
         }
-        public Task<int> RegisterUser(UserVm userVm)
+        async public Task<int> RegisterUser(UserVm userVm)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<string?> SignIn(UserVm user)
-        {
-            if (!await _applicationDbContext.users.AnyAsync(a => a.Email == user.Email && a.Password == user.Password))
+            try
             {
-                return null;
+
+                if (await UserExists(userVm))
+                {
+                    return 2;
+                }
+               // userVm.Password = Utilities.EncodeToBase64(userVm.Password);
+                User userToIns = _mapper.Map<UserVm, User>(userVm);
+                await _applicationDbContext.users.AddAsync(userToIns);
+                return _applicationDbContext.SaveChanges();
+
+
             }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+        }
 
 
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        /// <summary>
+        /// used to login user with a access token and a refresh token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>returns the response data with token and refresh token</returns>
+        public async Task<ResponseData> SignIn(UserVm user)
+        {
+
+            if (!await UserExists(user))
+            {
+                return new ResponseData { token = null };
+            }
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier,user.Email),
                 new Claim(ClaimTypes.Role,user.Password)
             };
-            var audience = _configuration["Jwt:Audience"];
-            var issuer = _configuration["Jwt:Issuer"];
-            var token = new JwtSecurityToken(
-                issuer,
-                audience,
-                claims,
-                expires: DateTime.UtcNow.AddHours(10),
-                   signingCredentials: credentials);
+            var token = _tokenService.generatetoken(claims);
 
+            var refToken = _tokenService.GenerateRefreshToken();
+            await _applicationDbContext.RefreshToken.AddAsync(new Model.Models.RefreshToken
+            {
+                Token = refToken,
+                ExpirationTime = DateTime.UtcNow.AddDays(2),
+                IsActive = true,
+                RefreshCount = 0,
+                UserId= user.Id
+            });
 
-            var tokenToRet = new JwtSecurityTokenHandler().WriteToken(token);
-
-            return tokenToRet;
+         await   _applicationDbContext.SaveChangesAsync();
+            return new ResponseData
+            {
+                token = token,
+                RefreshToken = refToken
+            };
 
         }
 
@@ -65,5 +98,60 @@ namespace BasicWebApi.IService.Service
         {
             throw new NotImplementedException();
         }
+
+
+
+
+        async private Task<bool> UserExists(UserVm user)
+        {
+          //  user.Password = Utilities.EncodeToBase64(user.Password);
+
+            return await _applicationDbContext.users.AnyAsync(a => a.Email == user.Email && a.Password == user.Password);
+        }
+
+        /// <summary>
+        /// This method is used to refresh the access token and refresh token for the use of jwt with protected resources
+        /// </summary>
+        /// <returns></returns>
+        async public Task<ResponseData> RefreshTheToken(TokenVm previoustoken)
+        {
+            IEnumerable<Claim> claims = _tokenService.GetClaimsPrincipalFromExpiredToken(previoustoken.Token).Claims;
+
+            RefreshToken refreshToken = await _applicationDbContext.RefreshToken.FirstAsync(a => a.Token == previoustoken.Token);
+            if (refreshToken.IsActive)
+            {
+                if (DateTime.UtcNow < refreshToken.ExpirationTime && refreshToken.RefreshCount <= 5)
+                {
+                    string accessToken = _tokenService.generatetoken(claims);
+                    refreshToken.RefreshCount = refreshToken.RefreshCount + 1;
+
+                    _applicationDbContext.RefreshToken.Update(refreshToken);
+                    await _applicationDbContext.SaveChangesAsync();
+                    return new ResponseData
+                    {
+                        token = accessToken,
+                        RefreshToken = previoustoken.RefreshToken
+                    };
+
+
+                }
+                else
+                {
+                    refreshToken.IsActive = false;
+                    _applicationDbContext.RefreshToken.Update(refreshToken);
+                    _applicationDbContext.SaveChanges();
+                }
+            }
+
+
+            return new ResponseData
+            {
+                token = _tokenService.generatetoken(claims),
+                RefreshToken = _tokenService.GenerateRefreshToken(),
+            };
+        }
     }
+
+
 }
+

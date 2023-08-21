@@ -11,7 +11,9 @@ namespace BasicWebApi.IService.IService
     {
         Task<int> RegisterUser(UserVm userVm);
         Task SignOut();
-        Task<string> SignIn(UserVm user);
+        Task<ResponseData> SignIn(UserVm user);
+
+        Task<ResponseData> RefreshTheToken(TokenVm previousToken);
 
     }
 }

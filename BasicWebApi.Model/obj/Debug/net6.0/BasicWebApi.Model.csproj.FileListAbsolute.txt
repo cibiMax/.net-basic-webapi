@@ -1,18 +1,3 @@
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.csproj.AssemblyReference.cache
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.GeneratedMSBuildEditorConfig.editorconfig
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.AssemblyInfoInputs.cache
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.AssemblyInfo.cs
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.csproj.CoreCompileInputs.cache
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.deps.json
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.dll
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.pdb
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.ViewModel.dll
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.ViewModel.pdb
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.csproj.CopyComplete
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.dll
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\refint\BasicWebApi.Model.dll
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.pdb
-D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\ref\BasicWebApi.Model.dll
 C:\Users\ramat\Source\Repos\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.deps.json
 C:\Users\ramat\Source\Repos\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.dll
 C:\Users\ramat\Source\Repos\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.pdb
@@ -43,3 +28,18 @@ C:\Cb\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.dll
 C:\Cb\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\refint\BasicWebApi.Model.dll
 C:\Cb\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.pdb
 C:\Cb\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\ref\BasicWebApi.Model.dll
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.deps.json
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.dll
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.Model.pdb
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.ViewModel.dll
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\bin\Debug\net6.0\BasicWebApi.ViewModel.pdb
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.csproj.AssemblyReference.cache
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.AssemblyInfoInputs.cache
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.AssemblyInfo.cs
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.csproj.CoreCompileInputs.cache
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.csproj.CopyComplete
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.dll
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\refint\BasicWebApi.Model.dll
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\BasicWebApi.Model.pdb
+D:\vs projects\.net-basic-webapi\BasicWebApi.Model\obj\Debug\net6.0\ref\BasicWebApi.Model.dll

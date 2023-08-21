@@ -1,4 +1,5 @@
-﻿using BasicWebApi.IService.IService;
+﻿using basicwebapi.constants;
+using BasicWebApi.IService.IService;
 using BasicWebApi.ViewModel.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,31 +16,92 @@ namespace basicwebapi.Controllers
         [AllowAnonymous]
         [Route("api/[controller]/[action]")]
         [HttpPost]
+
+        ////
         public async Task<IActionResult> Login([FromBody] UserVm userVm)
         {
-            string token = await _authService.SignIn(userVm);
-            if (token == null)
+            ResponseData response = await _authService.SignIn(userVm);
+            if (response.token == null)
             {
                 return Unauthorized();
             }
-            return Ok(
-           new TokenVm
-           {
-               JwtToken = token,
-               RefreshToken = "",
-           });
+            response.Message = StringConstants.LoginSuccess;
+
+
+            return Ok(response);
         }
+
+
         [Route("api/[controller]/[action]")]
         [HttpPost]
         public async Task<IActionResult> RegisterUser(UserVm userVm)
         {
-            return Ok();
+            int rval = await _authService.RegisterUser(userVm);
+            if (rval == 0)
+
+                return Ok(new ResponseData
+                {
+                    Message = StringConstants.Signuperr,
+                    status = 0
+                });
+
+
+            else if (rval == 1)
+                return Ok(new ResponseData
+                {
+                    Message = StringConstants.SignupSuccess,
+                    status = 1
+                });
+            else
+            {
+                return Ok(new ResponseData
+                {
+                    Message = StringConstants.UserExists,
+                    status = 0
+                });
+
+            }
+
+
+
+
+
         }
         [Route("api/[controller]/[action]")]
         [HttpPost]
-        public async Task SignOut()
+        public async Task SignOut(TokenVm tokenVm)
         {
+            try
+            {
+                _authService.RefreshTheToken(tokenVm);
+            }
+            catch (Exception Ex)
+            {
+
+                throw;
+            }
 
         }
+        [Route("api/[controller]/[action]")]
+        [HttpPost]
+        public async Task<IActionResult> RefreshToken(TokenVm tokenVm)
+        {
+            try
+            {
+                var res = await _authService.RefreshTheToken(tokenVm);
+                return Ok(res);
+            }
+            catch (Exception Ex)
+            {
+                return Ok(new ResponseData
+                {
+                    Message = Ex.Message,
+                });
+
+            }
+
+        }
+
+
     }
 }

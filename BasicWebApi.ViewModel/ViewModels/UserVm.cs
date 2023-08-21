@@ -17,6 +17,8 @@ namespace BasicWebApi.ViewModel.ViewModels
         [Required]
         public string ? Password { get; set; }
 
+        public string Role { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime LastModifiedDate { get; set; }
         public int CreatedBy { get; set; }

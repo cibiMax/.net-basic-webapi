@@ -2,6 +2,7 @@
 
 
 using basicwebapi;
+using BasicWebApi.Model.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,8 @@ namespace basicwebapi.Models
 
         public DbSet<Student> students { get; set; }
         public DbSet<User> users { get; set; }
+
+        public DbSet<RefreshToken> RefreshToken { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

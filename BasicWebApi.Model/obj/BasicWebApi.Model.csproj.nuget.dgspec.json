@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Cb\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj": {}
+    "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj": {}
   },
   "projects": {
-    "C:\\Cb\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj": {
+    "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj",
+        "projectUniqueName": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj",
         "projectName": "BasicWebApi.Model",
-        "projectPath": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj",
-        "packagesPath": "C:\\Users\\ramat\\.nuget\\packages\\",
-        "outputPath": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.Model\\obj\\",
+        "projectPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\BasicWebApi.Model.csproj",
+        "packagesPath": "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\",
+        "outputPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ramat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cibi.MACSITCOM.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +31,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Cb\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj": {
-                "projectPath": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj"
+              "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj": {
+                "projectPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj"
               }
             }
           }
@@ -67,7 +70,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -76,21 +80,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Cb\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj": {
+    "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj",
+        "projectUniqueName": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj",
         "projectName": "BasicWebApi.ViewModel",
-        "projectPath": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj",
-        "packagesPath": "C:\\Users\\ramat\\.nuget\\packages\\",
-        "outputPath": "C:\\Cb\\.net-basic-webapi\\BasicWebApi.ViewModel\\obj\\",
+        "projectPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\BasicWebApi.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\cibi.MACSITCOM.000\\.nuget\\packages\\",
+        "outputPath": "D:\\vs projects\\.net-basic-webapi\\BasicWebApi.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ramat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cibi.MACSITCOM.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,7 +134,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -136,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

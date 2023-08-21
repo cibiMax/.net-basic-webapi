@@ -12,7 +12,8 @@ namespace basicwebapi
         {
             CreateMap<Student,StudentVm>();
             CreateMap<StudentVm, Student>();
-    
+            CreateMap<UserVm, User>();
+
 
         }
        

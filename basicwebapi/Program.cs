@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.AddSwaggerGen(c =>
 {
@@ -57,22 +58,24 @@ builder.Services.AddAuthentication(op =>
     op.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     op.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    
 }).AddJwtBearer((op) =>
 {
     op.RequireHttpsMetadata = false;
     op.SaveToken = true;
     op.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
     {
-     
+
         ValidateIssuer = false,
         ValidateAudience = false,
-        ValidateLifetime = false,
+        ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
         ValidateActor = false,
         RequireExpirationTime = true,
         ValidAudience = audience,
         ValidIssuer = issuer,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
+        ClockSkew = TimeSpan.Zero
       
     };
 });
