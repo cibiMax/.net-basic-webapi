@@ -8,5 +8,7 @@
         public static string Signuperr = "User Registration Failed,Try Again!";
         public static string LoginSuccess = "Login Successfully!";
 
+        public static string LoginAgain = "Session Timed Out Login In Again to Continue !";
+
     }
 }

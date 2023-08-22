@@ -34,12 +34,12 @@ namespace BasicWebApi.IService.Service
         {
             try
             {
-
-                if (await UserExists(userVm))
+                User user1 =  UserExists(userVm);
+                if (user1 != null)
                 {
                     return 2;
                 }
-               // userVm.Password = Utilities.EncodeToBase64(userVm.Password);
+                // userVm.Password = Utilities.EncodeToBase64(userVm.Password);
                 User userToIns = _mapper.Map<UserVm, User>(userVm);
                 await _applicationDbContext.users.AddAsync(userToIns);
                 return _applicationDbContext.SaveChanges();
@@ -62,8 +62,8 @@ namespace BasicWebApi.IService.Service
         /// <returns>returns the response data with token and refresh token</returns>
         public async Task<ResponseData> SignIn(UserVm user)
         {
-
-            if (!await UserExists(user))
+            User user1 = UserExists(user);
+            if (user1 == null)
             {
                 return new ResponseData { token = null };
             }
@@ -81,10 +81,10 @@ namespace BasicWebApi.IService.Service
                 ExpirationTime = DateTime.UtcNow.AddDays(2),
                 IsActive = true,
                 RefreshCount = 0,
-                UserId= user.Id
+                UserId = user1.Id
             });
 
-         await   _applicationDbContext.SaveChangesAsync();
+            await _applicationDbContext.SaveChangesAsync();
             return new ResponseData
             {
                 token = token,
@@ -102,11 +102,11 @@ namespace BasicWebApi.IService.Service
 
 
 
-        async private Task<bool> UserExists(UserVm user)
+        private User UserExists(UserVm user)
         {
-          //  user.Password = Utilities.EncodeToBase64(user.Password);
+            //  user.Password = Utilities.EncodeToBase64(user.Password);
 
-            return await _applicationDbContext.users.AnyAsync(a => a.Email == user.Email && a.Password == user.Password);
+            return _applicationDbContext.users.Where(a => a.Email == user.Email && a.Password == user.Password).First();
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace BasicWebApi.IService.Service
         {
             IEnumerable<Claim> claims = _tokenService.GetClaimsPrincipalFromExpiredToken(previoustoken.Token).Claims;
 
-            RefreshToken refreshToken = await _applicationDbContext.RefreshToken.FirstAsync(a => a.Token == previoustoken.Token);
+            RefreshToken refreshToken = await _applicationDbContext.RefreshToken.FirstAsync(a => a.Token == previoustoken.RefreshToken);
             if (refreshToken.IsActive)
             {
                 if (DateTime.UtcNow < refreshToken.ExpirationTime && refreshToken.RefreshCount <= 5)
@@ -144,11 +144,7 @@ namespace BasicWebApi.IService.Service
             }
 
 
-            return new ResponseData
-            {
-                token = _tokenService.generatetoken(claims),
-                RefreshToken = _tokenService.GenerateRefreshToken(),
-            };
+            return new ResponseData { status = 401 };
         }
     }
 

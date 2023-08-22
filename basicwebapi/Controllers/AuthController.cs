@@ -84,12 +84,12 @@ namespace basicwebapi.Controllers
         }
         [Route("api/[controller]/[action]")]
         [HttpPost]
-        public async Task<IActionResult> RefreshToken(TokenVm tokenVm)
+        public async Task<IActionResult> RefreshToken([FromBody] TokenVm tokenVm)
         {
             try
             {
                 var res = await _authService.RefreshTheToken(tokenVm);
-                return Ok(res);
+                return res.status == 401 ? Ok(Unauthorized()) : Ok(res);
             }
             catch (Exception Ex)
             {

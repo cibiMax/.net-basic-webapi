@@ -18,7 +18,6 @@ namespace BasicWebApi.IService.Service
 {
     public class TokenService : ITokenService
     {
-
         private readonly IConfiguration _configuration;
 
         public TokenService(IConfiguration configuration)
@@ -66,7 +65,7 @@ namespace BasicWebApi.IService.Service
 
 
             var tokenToRet = new JwtSecurityTokenHandler().WriteToken(token);
-            
+
 
             return tokenToRet;
         }
@@ -103,6 +102,6 @@ namespace BasicWebApi.IService.Service
 
 
         }
-        
+
     }
 }
