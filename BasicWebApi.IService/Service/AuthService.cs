@@ -69,8 +69,8 @@ namespace BasicWebApi.IService.Service
             }
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier,user.Email),
-                new Claim(ClaimTypes.Role,user.Password)
+                new Claim(ClaimTypes.NameIdentifier,user1.Email),
+                new Claim(ClaimTypes.Role,user1.Role)
             };
             var token = _tokenService.generatetoken(claims);
 

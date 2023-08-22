@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace basicwebapi.Controllers
 {
-    [Authorize]
+  //  [Authorize(Roles ="Admin,User")]
     [ApiController]
     public class StudentController : ControllerBase
     {
@@ -19,6 +19,7 @@ namespace basicwebapi.Controllers
 
         }
         [HttpPost]
+        [Authorize(Roles = "User")]
         [Route("Create")]
         async public Task<IActionResult> InsertStudent([FromBody] StudentVm student)
         {
@@ -29,6 +30,7 @@ namespace basicwebapi.Controllers
 
         }
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         [Route("GetAll")]
         public IActionResult GetStudents()
         {
@@ -37,6 +39,7 @@ namespace basicwebapi.Controllers
             return Ok(students);
         }
         [HttpGet]
+        [Authorize(Roles = "Admin,User")]
         [Route("GetById")]
         public IActionResult GetStudentById(int id)
         {
@@ -45,6 +48,7 @@ namespace basicwebapi.Controllers
             return Ok(students);
         }
         [HttpPut]
+        [Authorize(Roles = "User")]
         [Route("UpdateStudent")]
         public IActionResult UpdateStudent([FromBody] StudentVm student)
         {
@@ -52,6 +56,7 @@ namespace basicwebapi.Controllers
             return Ok();
         }
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         [Route("DeleteStudent")]
         public IActionResult Delete(int id)
         {
